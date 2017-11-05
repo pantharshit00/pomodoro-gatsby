@@ -1,0 +1,102 @@
+.flex-center {
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.flex-center > div {
+  flex: 1;
+}
+
+.flex-center div:first-child {
+  margin-top: 2rem;
+}
+
+.timer {
+  font-size: 5rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.minutes {
+  font-weight: 600;
+}
+
+.seconds {
+  font-weight: 400;
+}
+
+.btn {
+  background: rebeccapurple;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-start-time {
+  background: #16a085;
+  font-family: "Quicksand", sans-serif;
+  margin-right: 0.3rem;
+  padding: 0.3rem 4rem 0.3rem 4rem;
+}
+
+@media all and (max-width: 793px) {
+  .btn-start-time {
+    padding: 0.3rem 2rem 0.3rem 2rem;
+  }
+}
+
+@media all and (max-width: 554px) {
+  .btn-start-time {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+  }
+  .btn {
+    display: block;
+    margin: 3px;
+  }
+  .timer {
+    margin-top: 35px;
+  }
+  .shortcuts {
+    margin-top: 10px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  html {
+    font-size: 12px !important;
+  }
+}
+
+.btn-bottom {
+  padding: 0.6rem 3rem 0.6rem 3rem;
+  margin-left: 0.4rem;
+}
+
+.btn-start {
+  background: #27ae60;
+}
+
+.btn-stop {
+  background: #c0392b;
+}
+.btn-reset {
+  background: #ecf0f1;
+  border: 0.5ps solid grey;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.btn:hover {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.shortcuts {
+  border: 1px solid black;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.shortcuts h3 {
+  font-family: "Quicksand", sans-serif;
+}
