@@ -6,17 +6,19 @@
   "dependencies": {
     "gatsby": "^1.9.99",
     "gatsby-link": "^1.6.24",
-    "gatsby-plugin-react-helmet": "^1.0.8"
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "typeface-quicksand": "^0.0.43"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "precommit": "lint-staged",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
