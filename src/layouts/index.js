@@ -18,11 +18,12 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Pomodoro Timer"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'description', content: 'Pomodoro Timer' },
+        { name: 'keywords', content: 'pomodoro, kanban' }
       ]}
+      link={[{ rel: 'icon', href: '/static/tomato.png' }]}
     />
     <Header />
     <div>{children()}</div>

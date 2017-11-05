@@ -1,7 +1,24 @@
+.navbar {
+  display: grid;
+  grid-auto-columns: 1fr;
+  background-color: #ecf0f1;
+  padding: 2rem;
+}
+
 .link {
   text-decoration: none;
 }
 
-.link .link__nav {
+.link__nav {
+  color: rgba(0, 0, 0, 0.87);
   font-family: "Quicksand", sans-serif;
+}
+
+.link__nav:first-child {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+a {
+  cursor: pointer;
 }
