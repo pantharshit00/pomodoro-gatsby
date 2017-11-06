@@ -16,6 +16,8 @@
 .timer {
   font-size: 5rem;
   font-family: "Quicksand", sans-serif;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
 }
 
 .minutes {

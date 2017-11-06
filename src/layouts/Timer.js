@@ -42,9 +42,6 @@ export default class Timer extends Component {
       minutes: this.formatNumber(minutes),
       seconds: this.formatNumber(seconds)
     };
-    if (typeof window !== 'undefined') {
-      this.audio = new Audio(alarm);
-    }
   }
   componentWillUpdate = (nextProps, nextState) => {
     let minutes = Math.floor(nextState.time / 60);
@@ -156,6 +153,7 @@ export default class Timer extends Component {
           <br />
           Reset Timer: <kbd>Alt</kbd> + <kbd>r</kbd>
         </div>
+        <audio src={alarm} ref={audio => (this.audio = audio)} />
       </div>
     );
   }
