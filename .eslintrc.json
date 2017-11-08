@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+  "settings": {
+    // These packages are provided 'magically' by Gatsby
+    "import/core-modules": ["react", "prop-types", "react-helmet"]
+  },
+  "rules": {
+    "linebreak-style": ["warn", "windows"],
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/anchor-is-valid": ["error", {}],
+    "react/require-default-props": 0
+  }
+}

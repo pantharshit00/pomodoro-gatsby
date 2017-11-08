@@ -21,7 +21,7 @@ const TemplateWrapper = ({ children }) => (
       title="Pomodoro Timer"
       meta={[
         { name: 'description', content: 'Pomodoro Timer' },
-        { name: 'keywords', content: 'pomodoro, kanban' }
+        { name: 'keywords', content: 'pomodoro, kanban' },
       ]}
       link={[{ rel: 'icon', href: '/tomato.png' }]}
     />
@@ -31,7 +31,7 @@ const TemplateWrapper = ({ children }) => (
 );
 
 TemplateWrapper.propTypes = {
-  children: PropTypes.func
+  children: PropTypes.func,
 };
 
 export default TemplateWrapper;
