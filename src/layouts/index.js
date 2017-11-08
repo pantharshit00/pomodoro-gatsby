@@ -23,7 +23,7 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Pomodoro Timer' },
         { name: 'keywords', content: 'pomodoro, kanban' }
       ]}
-      link={[{ rel: 'icon', href: '/static/tomato.png' }]}
+      link={[{ rel: 'icon', href: '/tomato.png' }]}
     />
     <Header />
     <div>{children()}</div>

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Pomodoro Timer`
+    title: 'Pomodoro Timer'
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Pomodoro Timer',
         short_name: 'pomodoro',
@@ -15,19 +15,19 @@ module.exports = {
         display: 'fullscreen',
         icons: [
           {
-            src: `/tomato.png`,
-            sizes: `192x192`,
-            type: `image/png`
+            src: '/tomato-192.png',
+            sizes: '192x192',
+            type: 'image/png'
           },
           {
-            src: `/tomato.png`,
-            sizes: `512x512`,
-            type: `image/png`
+            src: '/tomato-512.png',
+            sizes: '512x512',
+            type: 'image/png'
           }
         ]
       }
     },
-    `gatsby-plugin-offline`
+    'gatsby-plugin-offline'
   ],
   pathPrefix: '/'
 };
