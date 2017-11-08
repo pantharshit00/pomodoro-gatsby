@@ -105,7 +105,7 @@ export default class Timer extends Component {
           <title>
             {this.state.playing
               ? `(${this.state.minutes} : ${this.state
-                .seconds}) | Pomodoro Timer`
+                  .seconds}) | Pomodoro Timer`
               : 'Pomodoro Timer'}
           </title>
         </Helmet>
