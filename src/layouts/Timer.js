@@ -40,9 +40,11 @@ export default class Timer extends Component {
       timer: props.time,
       time: props.time,
       minutes: this.formatNumber(minutes),
-      seconds: this.formatNumber(seconds)
+      seconds: this.formatNumber(seconds),
+      playing: props.start
     };
   }
+
   componentWillUpdate = (nextProps, nextState) => {
     let minutes = Math.floor(nextState.time / 60);
     let seconds = Math.floor(nextState.time - minutes * 60);
@@ -58,19 +60,19 @@ export default class Timer extends Component {
   };
 
   startTimer = () => {
+    this.setState({ playing: true });
     const { time } = this.state;
     const currentTime = Date.now();
     const timeTillRun = currentTime + time * 1000;
     this.intervel = setInterval(() => {
       let left = Math.round((timeTillRun - Date.now()) / 1000);
       if (left == 25) this.audio.play();
-      if (left < 0) {
+      if (left < 0 || !this.state.playing) {
         clearInterval(this.intervel);
         return;
       }
       this.setState({ time: left });
     }, 1000);
-    this.setState({ playing: true });
   };
 
   componentWillUnmount = () => {
@@ -87,9 +89,9 @@ export default class Timer extends Component {
   resetTimer = (e, time = this.state.timer, start = false) => {
     this.audio.pause();
     this.audio.currentTime = 0;
-    clearInterval(this.intervel);
-    this.setState({ playing: false }, () => {
-      this.setState({ time }, () => {
+    this.setState({ time }, () => {
+      clearInterval(this.intervel);
+      this.setState({ playing: false }, () => {
         if (start) this.startTimer();
       });
     });
@@ -97,7 +99,7 @@ export default class Timer extends Component {
 
   render() {
     return (
-      <div className="flex-center">
+      <div className="grid">
         <Helmet>
           <title>
             {this.state.playing
@@ -127,7 +129,7 @@ export default class Timer extends Component {
           </a>
         </div>
         <div className="timer">
-          <span className="minutes">{this.state.minutes} : </span>
+          <span className="minutes">{this.state.minutes} :&nbsp;</span>
           <span className="seconds">{this.state.seconds}</span>
         </div>
         <div>
@@ -142,16 +144,26 @@ export default class Timer extends Component {
           </a>
         </div>
         <div className="shortcuts">
-          <h3>Shortcuts</h3>
-          Pause/Play : <kbd>Space</kbd>
-          <br />
-          Start Pomodoro: <kbd>Alt</kbd> + <kbd>p</kbd>
-          <br />
-          Start Long Break: <kbd>Alt</kbd> + <kbd>l</kbd>
-          <br />
-          Start Short Break: <kbd>Alt</kbd> + <kbd>s</kbd>
-          <br />
-          Reset Timer: <kbd>Alt</kbd> + <kbd>r</kbd>
+          <div>
+            <h3>Shortcuts</h3>
+            <ul>
+              <li>
+                Pause/Play : <kbd>Space</kbd>
+              </li>
+              <li>
+                Start Pomodoro: <kbd>Alt</kbd> + <kbd>p</kbd>
+              </li>
+              <li>
+                Start Long Break: <kbd>Alt</kbd> + <kbd>l</kbd>
+              </li>
+              <li>
+                Start Short Break: <kbd>Alt</kbd> + <kbd>s</kbd>
+              </li>
+              <li>
+                Reset Timer: <kbd>Alt</kbd> + <kbd>r</kbd>
+              </li>
+            </ul>
+          </div>
         </div>
         <audio src={alarm} ref={audio => (this.audio = audio)} />
       </div>
