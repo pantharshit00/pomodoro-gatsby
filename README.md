@@ -1,13 +1,22 @@
-# gatsby-starter-default
-The default Gatsby starter
+## Pomodoro Clock
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+Pomodoro timer that works offline. https://pompom.now.sh
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## Getting started
+1. Clone this repo.
+2. Installed dependencies
+  ```
+  # prefer yarn as this has the lockfile
+  npm install
+  # OR
+  yarn 
+  ```
+3. Run gatsby
+  ```
+  npm run develop
+  # OR
+  yarn run develop
+  ```
+  
+  
+### PRs are welcome  
