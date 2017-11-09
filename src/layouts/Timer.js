@@ -30,6 +30,12 @@ export default class Timer extends Component {
         this.resetTimer({});
       }
     };
+    Notification.requestPermission().then(per => {
+      if (per == 'granted')
+        this.setState({
+          notification: true
+        });
+    });
   }
 
   constructor(props) {
@@ -41,6 +47,7 @@ export default class Timer extends Component {
       time: props.time,
       minutes: this.formatNumber(minutes),
       seconds: this.formatNumber(seconds),
+      notification: false,
       playing: props.start
     };
   }
@@ -67,6 +74,12 @@ export default class Timer extends Component {
     this.intervel = setInterval(() => {
       let left = Math.round((timeTillRun - Date.now()) / 1000);
       if (left <= 25) this.audio.play();
+      if (left < 0 && this.state.notification) {
+        new Notification('Timer is Up!', {
+          body: 'Reset you timer now',
+          badge: '/tomato-192.png'
+        });
+      }
       if (left < 0 || !this.state.playing) {
         this.audio.pause();
         clearInterval(this.intervel);
