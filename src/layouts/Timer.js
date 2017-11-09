@@ -66,9 +66,9 @@ export default class Timer extends Component {
     const timeTillRun = currentTime + time * 1000;
     this.intervel = setInterval(() => {
       let left = Math.round((timeTillRun - Date.now()) / 1000);
-      if (left == 25) this.audio.play();
-      if (left < 25) this.audio.resume();
+      if (left <= 25) this.audio.play();
       if (left < 0 || !this.state.playing) {
+        this.audio.pause();
         clearInterval(this.intervel);
         return;
       }
