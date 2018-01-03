@@ -1,4 +1,5 @@
 .grid {
+  background: rgba(0, 0, 0, 0.87);
   font-family: Quicksand, sans-serif;
   display: grid;
   grid-template-rows: 1fr 3fr 1fr 6fr;
@@ -36,16 +37,18 @@
   align-items: center;
   justify-content: center;
   font-size: 5rem;
-  font-feature-settings: "tnum";
+  font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 }
 
 .minutes {
   font-weight: 600;
+  color: #ffffff;
 }
 
 .seconds {
   font-weight: 400;
+  color: #ffffff;
 }
 
 .btn-bottom {
@@ -78,6 +81,7 @@
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  color: #ecf0f1;
 }
 
 .shortcuts div:hover {

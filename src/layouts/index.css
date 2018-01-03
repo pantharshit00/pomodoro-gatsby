@@ -1,7 +1,7 @@
 .navbar {
   display: grid;
   grid-auto-columns: 1fr;
-  background-color: #ecf0f1;
+  background-color: rgba(0, 0, 0, 0.87);
   padding: 2rem;
 }
 
@@ -10,8 +10,8 @@
 }
 
 .link__nav {
-  color: rgba(0, 0, 0, 0.87);
-  font-family: "Quicksand", sans-serif;
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .link__nav:first-child {
